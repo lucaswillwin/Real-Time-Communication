@@ -1,4 +1,22 @@
 
+.creation {
+  position: absolute;
+  background-color: grey;
+  border-radius: 5px;
+  border: solid;
+  width: 30vw;
+  height:50vh;
+  top: 10%;
+  left: 35%;
+  transform: translateX(-10%);
+}
+
+.creation form {
+  position: relative;
+  top: 45%;
+  left: 5%;
+
+}
 
 
 /* 1. Global Box Reset (Crucial to prevent scrolling bugs) */
@@ -24,6 +42,7 @@
 }
 
 .message-history p {
+  display: flex;
   background-color: rgb(72, 73, 74);
   border: 1px;
   border-radius: 2px;
@@ -33,8 +52,13 @@
   font-size: 18px;
   font-family: Arial, Helvetica, sans-serif;
   margin-bottom: 10px;
+  
 }
 
+
+.users {
+  text-align: center;
+}
 /* 4. The Bottom Input Bar */
 .input-container { 
   display: flex;
@@ -45,13 +69,22 @@
 }
 
 textarea {
+  position: relative;
   width: 100%;
-  height: 50px;
+  height: 100%;
   padding: 10px;
   resize: none; /* Prevents the user from dragging and breaking the layout */
   border: 1px solid #ccc;
   border-radius: 4px;
   font-family: inherit;
+  top: 5px;
+}
+
+.input-container button {
+  position: relative;
+  top: 5px;
+
+    
 }
 
 button {
@@ -61,4 +94,11 @@ button {
     border-radius: 5px;
     border-color:rgb(171, 229, 252);
     margin-left: 10px;
+    
+}
+
+#icon_stuff {
+  display: flex;
+  flex-direction: column;
+  padding-right: 20px;
 }

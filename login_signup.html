@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <title>Login</title>
+        <link rel="stylesheet" href="css/login_signup.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="scripts/login_signup.js" defer></script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <span class="rotate-bg"></span>
+            <span class="rotate-bg2"></span>
+            <div class="form-box">
+                <!-- Login -->
+            <div class="box-login">
+                <h2>Login</h2>
+                <form id="form1">
+                    <div id="login_user">
+                        <label for="login">Username</label>
+                        <input type='text' id="login" name="username" placeholder="Sandra" required>
+                    </div>
+
+                    <div id="login_pass">
+                        <label for="login">Password</label>
+                        <input type='password' name="password" id="login" placeholder="passeo" required>
+                    </div>
+
+                    <div class="remember-forgot">
+                        <label><input type="checkbox">Remember me</label>
+                        <a href="#">Forgot password?</a>
+                    </div>
+                    <button type="submit">Login</button>
+                    <button type="button" id="switch">Sign Up</button>
+                </form>
+            </div>
+            <div class="info-text login" >
+                <h2 class="animation" style="--i:0; --j:20">Welcome Back!</h2>
+                <p class="animation" style="--i:1; --j:21">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <!-- ---------------------------->
+             <!-- Sign Up -->
+            <div class="box-signup">
+                <h2>Sign Up</h2>
+                <form id="form2">
+                    <div id="register_email">
+                        <label for="register">Email (optional)</label>
+                        <input type='text' id="register" name="email" placeholder="Something@gmail.com">
+                    </div>
+                    <div id="register_user">
+                        <label for="register">Username</label>
+                        <input type='text' id="register" name="username" placeholder="Sandra" required>
+                    </div>                  
+                    <div id="register_pass">
+                        <label for="register">Password</label>
+                        <input type='password' name="password" id="register" placeholder="passeo" required>
+                    </div>
+                    <button>Sign Up</button>
+                    <p style="color: rgba(255, 255, 255, 0.7);">Already have an account? <a href="#" style="color: rgb(64, 250, 191); text-decoration: none;" id="login_link">Login</a></p>
+                </form>
+            </div>
+            <div class="info-text register" >
+                <h2 class="animation" style="--i:0; --j:20">Welcome Back!</h2>
+                <p class="animation" style="--i:1; --j:21">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <!-- ---------------------------->
+
+        </div>                
+        </div>
+
+        <!-- #region 
+        <div id="signup">
+            
+            <form id="form2">
+                <label for="signup">Username</label>
+                <input type='text' id="signup" name="username">
+                <label for="signup">password</label>
+                <input type='password' id="signup" name="password">
+            </form>
+        </div>
+-->
+    </body>
+</html>

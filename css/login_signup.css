@@ -1,0 +1,331 @@
+body {
+    /*background-color: rgb(63, 51, 40);*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to right,blue,pink);
+}
+
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.wrapper {
+    position: relative;
+    height: 500px;
+    width: 850px;
+    border: 2px solid black;
+    box-shadow: 0 0 25px 5px black;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Form Stuff */
+
+.form-box {
+    display: flex;
+    position: relative;
+    align-items: center;
+    top: 50px;
+    left: 100px;
+}
+
+
+#form1,#form2 {
+    display: flex;
+    color: pink;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 15px;
+}
+
+#form1 button, #form2 button {
+    background-color: pink;
+    text-align: center;
+    width: 100%;
+    height: 45px;
+    border: none;
+    color: black;
+    font-size: 20px;
+    border-radius: 50px;
+    transition: 0.3s;
+    cursor: pointer;
+    
+}
+
+#form1 button:last-child,#form2 button:last-child {
+    background-color: rgb(255, 152, 202);
+    border-color: rgb(255, 152, 202);
+}
+
+
+h2 {
+    position: relative;
+    margin: 25px 0;
+    font-size:xx-large;
+    font-family: sans-serif;
+    justify-content: center;
+    color: pink;
+    text-align: center;
+
+}
+
+/* ------------------------- */
+
+
+
+/* Login and Signup Stuff */
+
+.box-login h2::after, .box-signup h2::after {
+    content: "";
+    position: absolute;
+    background-color: black;
+    width: 40px;
+    height: 4px;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.box-signup {
+    position: relative;
+    left: 545px;
+    transform: translate(150%);
+    visibility: hidden;
+    pointer-events: none;
+}
+
+#login, #register {
+    display: flex;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid black;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    padding-right: 23px;
+    font-size: 15px;
+    font-weight: 500;
+    color: white;
+}
+
+#login_user ::placeholder, #register_user ::placeholder, #register_email ::placeholder {
+    margin-bottom: 12px;
+    color: rgba(255, 255, 255, 0.594);
+    
+}
+
+#login_pass ::placeholder, #register_pass ::placeholder {
+    color: rgba(255, 255, 255, 0.594);
+}
+
+/* ------------------------- */
+
+label {
+    position: relative;
+    font-family: sans-serif;
+}
+
+label::after {
+    display: flex;
+    position: relative;
+    content: "";
+    padding-top: 2px;
+
+}
+
+button:hover {
+    box-shadow: 0 0 10px rgb(0,0,0,0.8);
+}
+
+.remember-forgot {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.remember-forgot a {
+    color: rgb(224, 39, 244);
+}
+
+
+/* Info Text */
+
+.wrapper .info-text {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.wrapper .info-text.login {
+    text-align: right;
+    right: 0;
+    padding: 0 200px 60px 50px;
+}
+
+.wrapper .info-text h2{
+    font-size: 36px;
+    line-height: 1.3;
+    text-transform: uppercase;
+    font-weight: 780;
+    color: white;
+}
+
+.wrapper .info-text p {
+    font-size: 16px;
+    color: white;
+}
+
+.wrapper .info-text.register{
+    left: -390px;
+    text-align: left;
+    padding: 0 150px 60px 40px;
+    pointer-events: none;
+}
+
+/* ------------------------- */
+
+
+@keyframes nice {
+    from {transform: rotate(10deg) skewY(40deg);
+    transform-origin: bottom right;}
+
+    to {transform: rotate(-10deg) skewY(-40deg);
+    transform-origin: bottom left;
+    }
+}
+
+
+
+/* Animations */
+
+
+
+/* .wrapper.active .rotate-bg2{
+    transform: rotate(-11deg) skewY(-40deg);
+    transition-delay: 1.2s;
+} */
+
+.wrapper.active .info-text.register .animation{
+    transform: translateX(290px);
+    opacity: 1;
+    filter: blur(0);
+    transition-delay: 0.1s;
+}
+.wrapper.active .box-login h2 {
+    filter: blur(2px);
+    transform: translateX(-500px);
+    transition: transform 0.2s ease-in 0.1s;
+}
+
+.wrapper.active #login_user,.box-signup {
+   transform: translateX(500px);
+    opacity: 1;
+    filter: blur(2px);
+    transition: transform 0.8s ease, opacity 0.6s ease, filter 0.6s ease;
+    pointer-events: auto;
+}
+
+.wrapper.active #login_user  {
+    /* filter: blur(2px); */
+    transform: translateX(-500px);
+    transition: transform 0.3s ease-in 0.1s;
+}
+
+.wrapper.active #login_pass  {
+    filter: blur(2px);
+    transform: translateX(-500px);
+    transition: transform 0.4s ease-in 0.1s;
+}
+
+.wrapper.active .info-text.login{
+    transform: translateX(120px);
+    opacity: 0;
+    filter: blur(10px);
+    transition: 0.7s ease;
+    transition-delay: calc(.1s * var(--i));
+}
+
+.wrapper.active .remember-forgot {
+    filter: blur(2px);
+    transform: translateX(-500px);
+    transition: transform 0.2s ease-in 0.2s;
+}
+.wrapper.active #form1 button {
+     filter: blur(2px);
+    transform: translateX(-500px);
+    transition: transform 0.2s ease-in 0.2s;
+}
+
+.wrapper.active .box-signup {
+    visibility: visible;
+    transform: translateX(-280px);
+    opacity: 1;
+    filter: blur(0);
+    transition: transform 0.8s ease, opacity 0.6s ease, filter 0.6s ease;
+    /* transform: translateX(0); */
+    /* transition-delay: calc(.1s * var(--i)); */
+}
+
+
+
+/* ------------------------- */
+
+
+/* Transitions */
+
+
+.wrapper .info-text.register .animation{
+    transform: translateX(-120%);
+    opacity: 0;
+    filter: blur(10px);
+    transition: .7s ease;
+    transition-delay: 0.1s
+}
+
+    
+.wrapper .rotate-bg {
+    position: absolute;
+    top: -250px;
+    width: 950px;
+    right: -100px;  
+    height: 980px;
+    background: black;
+    transform: rotate(10deg) skewY(40deg);
+    transform-origin: bottom right;
+    transition: transform 1.5s ease;
+    animation: nice 0.5s 0.1s 1 alternate forwards paused;
+    
+}
+
+/* ------------------------- */
+
+
+.wrapper form-box.box-signup{
+    padding: 0 40px 0 60px;
+    right: 0;
+}
+
+
+
+
+
+/*
+#form1 {
+    position: relative;
+    background-color: gray;
+    height: 350px;
+    width: 500px;
+    border: 1px solid black;
+    border-radius: 2px;
+}*/
